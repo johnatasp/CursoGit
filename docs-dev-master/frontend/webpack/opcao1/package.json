@@ -1,0 +1,67 @@
+{
+    "name": "sigfacil",
+    "author": "Natan Cardoso e Vicente Correia",
+    "license": "ISC",
+    "version": "2.0.0",
+    "description": "SigFácil com WebPack 4",
+    "repository": {
+        "type": "git",
+        "url": "git@git.voxtecnologia.com.br:vox/sigfacil.git"
+    },
+    "scripts": {
+        "start": "npm run imports && npm run watch",
+        "imports": "node web/import-generator/gerar.js",
+        "watch": "webpack --config webpack.dev.js --watch",
+        "build": "npm install && npm run imports && npm run prod && npm run rm",
+        "prod": "webpack --config webpack.prod.js",
+        "rm": "rm -rf web/dist/css/*.js , web/dist/css/**/*.js , web/dist/images , web/dist/node_modules"
+    },
+    "engines": {
+        "node": ">=12.13.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.12.1",
+        "@ryancavanaugh/jquery.dynatree": "1.2.14-alpha",
+        "bootstrap-sass": "^3.4.1",
+        "dsgov-vox": "git+ssh://git@gitlab.voxtecnologia.com.br:vox/bibliotecas/front-end/dsgov-vox.git#0.1.3",
+        "font-awesome": "^4.7.0",
+        "intro.js": "^2.9.3",
+        "jquery": "^3.4.1",
+        "jquery-mask-plugin": "^1.14.15",
+        "jquery-migrate": "^3.1.0",
+        "jquery-ui": "1.12.1",
+        "mustache": "3.0.1",
+        "parsleyjs": "2.0.6",
+        "q": "^1.5.1",
+        "sweetalert2": "^8.11.6",
+        "underscore": "^1.9.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+        "@babel/plugin-transform-template-literals": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "autoprefixer": "^9.5.1",
+        "babel-loader": "^8.0.5",
+        "clean-webpack-plugin": "^2.0.2",
+        "css-loader": "^1.0.1",
+        "file-loader": "^3.0.1",
+        "fs-extra": "^8.0.1",
+        "image-webpack-loader": "^5.0.0",
+        "mini-css-extract-plugin": "^0.6.0",
+        "node-sass": "^4.13.1",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "postcss-loader": "^3.0.0",
+        "recursive-readdir": "^2.2.2",
+        "resolve-url-loader": "^3.1.0",
+        "sass-loader": "^7.1.0",
+        "template-string-optimize-loader": "^3.0.0",
+        "terser-webpack-plugin": "^2.3.5",
+        "webpack": "^4.30.0",
+        "webpack-cli": "^3.3.2",
+        "webpack-dashboard": "^3.0.7",
+        "webpack-dev-server": "^3.3.1",
+        "webpack-glob-entry": "^2.1.1",
+        "webpack-merge": "^4.2.1"
+    }
+}
